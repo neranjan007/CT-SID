@@ -1,0 +1,6 @@
+{
+  "CTSID_workflow.samplename": "<sample-id>",
+  "CTSID_workflow.R1": "/path-to_R1_001.fastq.gz",
+  "CTSID_workflow.R2": "/path-to_R2_001.fastq.gz",
+  "CTSID_workflow.kraken2_database": "/path-to-kraken-db/k2_standard_08_GB_20250714.tar.gz"
+}
