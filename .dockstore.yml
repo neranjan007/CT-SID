@@ -1,0 +1,7 @@
+version: 1.2
+workflows:
+  - name: CT-SID
+    subclass: WDL
+    primaryDescriptorPath: /workflows/wf_ctsid.wdl
+    testParameterFiles:
+      - /files/empty.json
