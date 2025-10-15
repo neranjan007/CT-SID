@@ -32,6 +32,10 @@ task fastqc_task {
         r1_no_bases=$(jq -r '.qc_stats.total_bp' r1.json)
         echo "$r1_no_bases" > R1_NO_BASES 
         zcat ~{read2} | fastq-scan >> r2.json
+
+        r2_no_reads=$(jq '.qc_stats.read_total' r2.json)
+        echo "$r2_no_reads" > TOTAL_R2_READS
+        
         r2_no_bases=$(jq -r '.qc_stats.total_bp' r2.json)
         total_no_bases=$(expr $r1_no_bases + $r2_no_bases)
 
@@ -49,6 +53,7 @@ task fastqc_task {
         File r2_fastqc = "fastqc_out/~{base_r2}_fastqc.html"
         String r1_read_count = read_string("TOTAL_R1_READS")
         String r1_no_bases = read_string("R1_NO_BASES")
+        String r2_read_count = read_string("TOTAL_R2_READS")
         String total_no_bases = read_string("TOTAL_NO_BASES")
         String coverage = read_string("COVERAGE")
         String exp_length = read_string("EXP_LENGTH")

@@ -90,6 +90,8 @@ workflow CTSID_workflow{
         # raw fastqc
         File FASTQC_raw_R1 = rawfastqc_task.r1_fastqc
         File FASTQC_raw_R2 = rawfastqc_task.r2_fastqc
+        String FASTQ_SCAN_raw_R1_reads = rawfastqc_task.r1_read_count
+        String FASTQ_SCAN_raw_R2_reads = rawfastqc_task.r2_read_count
         String FASTQ_SCAN_raw_total_no_bases = rawfastqc_task.total_no_bases
         String FASTQ_SCAN_raw_coverage = rawfastqc_task.coverage
         String FASTQC_SCAN_exp_length = rawfastqc_task.exp_length
